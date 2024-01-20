@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "tycoon-game-algorithms"
+name = "idle-game-algorithms"
 version = "0.1.0"
 description = ""
 authors = ["szRR <sezer.tetik2005@gmail.com>"]
 readme = "README.md"
-packages = [{include = "tycoon_game_algorithms", from = "src"}]
+packages = [{include = "idle_game_algorithms", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
