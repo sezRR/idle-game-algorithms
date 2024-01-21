@@ -26,8 +26,8 @@ def rounder(number, ndigits=2):
 
 
 # INITIAL COST CALCULATOR
-initial_cost_multiplier = 24
-default_initial_cost = 5
+initial_cost_multiplier = 45
+default_initial_cost = 6
 
 
 def calculate_initial_cost(previous_initial_cost=0):
@@ -91,7 +91,7 @@ print()
 
 # CALCULATE INITIAL REVENUES
 default_initial_revenue = 1
-initial_revenue_multiplier = 24
+initial_revenue_multiplier = 45
 
 
 def calculate_initial_revenue(previous_initial_revenue=0):
@@ -133,7 +133,7 @@ plt.legend()
 plt.ticklabel_format(axis='y', style='plain')
 plt.gca().get_yaxis().set_major_formatter(plt.FuncFormatter(lambda x, _: format_large_number_custom(x)))
 
-plt.yscale('log')  # Set y-axis to log scale
+# plt.yscale('log')  # Set y-axis to log scale
 
 plt.grid(True)
 
