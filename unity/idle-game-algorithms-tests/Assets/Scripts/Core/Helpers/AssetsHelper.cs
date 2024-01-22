@@ -9,7 +9,7 @@ namespace Core.Helpers
     {
         public static T[] FindAssetsByType<T>() where T : Object
         {
-            var guids = AssetDatabase.FindAssets($"t:{typeof(T)}");
+            var guids = FindAssets(typeof(T));
             var assets = new T[guids.Length];
 
             for (int i = 0; i < guids.Length; i++)
@@ -19,6 +19,19 @@ namespace Core.Helpers
             }
 
             return assets;
+        }
+
+        public static T FindAssetByType<T>() where T : Object
+        {
+            var guid = FindAssets(typeof(T))[0];
+            var assetPath = AssetDatabase.GUIDToAssetPath(guid);
+            
+            return AssetDatabase.LoadAssetAtPath<T>(assetPath);
+        }
+
+        private static string[] FindAssets(Type type)
+        {
+            return AssetDatabase.FindAssets($"t:{type}");
         }
     }
 }

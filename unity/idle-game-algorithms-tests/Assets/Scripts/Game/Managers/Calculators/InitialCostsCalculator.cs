@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Helpers.Calculators
+namespace Game.Managers.Calculators
 {
     [Serializable]
     public class InitialCostsCalculator
     {
         [SerializeField] 
-        private MoneyHelper moneyHelper;
+        private MoneyManager moneyManager;
         
         [SerializeField] 
         private float defaultInitialCost = 5;
@@ -32,7 +32,7 @@ namespace Game.Helpers.Calculators
             {
                 previousInitialCost = CalculateInitialCost(previousInitialCost);
                 
-                initialCosts.Add(moneyHelper.GetFormattedMoney(previousInitialCost, noLetterForOutputMoney));
+                initialCosts.Add(moneyManager.GetFormattedMoney(previousInitialCost, noLetterForOutputMoney));
             }
 
             return initialCosts;

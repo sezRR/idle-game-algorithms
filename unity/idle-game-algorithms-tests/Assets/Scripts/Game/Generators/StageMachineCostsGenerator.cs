@@ -1,15 +1,17 @@
 using Core.Helpers;
 using Game.Helpers;
-using Game.Helpers.Calculators;
+using Game.Managers;
+using Game.Managers.Calculators;
 using Game.ScriptableObjects.StageConfigs;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Generators
 {
     public class Stage : MonoBehaviour
     {
-        [SerializeField] 
-        private MoneyHelper moneyHelper;
+        [FormerlySerializedAs("moneyHelper")] [SerializeField] 
+        private MoneyManager moneyManager;
 
         [SerializeField] 
         private InitialCostsCalculator initialCostsCalculator;
@@ -24,7 +26,7 @@ namespace Game.Generators
                 Debug.Log(initialCostsCalculator.CalculateInitialCosts(stageConfig.QuantityOfMachines));
             }
 
-            Debug.Log(moneyHelper.GetFormattedMoney(100000000000000000));
+            Debug.Log(moneyManager.GetFormattedMoney(100000000000000000));
             
         }
     }

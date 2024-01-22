@@ -5,7 +5,8 @@ namespace Game.ScriptableObjects.MoneyFormats
 {
     public class MoneyFormatScriptableObject : ScriptableObject
     {
-        [SerializeField] private string[] formats =
+        [SerializeField] 
+        private string[] formats =
         {
             "", "K", "M", "B", "T", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM",
             "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ", "BA", "BB", "BC", "BD",
