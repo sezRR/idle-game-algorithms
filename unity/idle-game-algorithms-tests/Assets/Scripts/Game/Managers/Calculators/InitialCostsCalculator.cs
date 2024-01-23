@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.Common.Interfaces.Helpers;
+using Game.Common.Interfaces.Managers;
+using Game.Common.Interfaces.Managers.Calculators.Initials;
 using UnityEngine;
+using Zenject;
 
 namespace Game.Managers.Calculators
 {
-    [Serializable]
-    public class InitialCostsCalculator
+    public class InitialCostsCalculator : IInitialCostsCalculatorManager
     {
-        [SerializeField] 
-        private MoneyManager moneyManager;
+        [Inject]
+        private IMoneyManager _moneyManager;
         
-        [SerializeField] 
         private float defaultInitialCost = 5;
-        
-        [SerializeField] 
         private float initialCostMultiplier = 24;
         
         public float CalculateInitialCost(float previousInitialCost = 0)
@@ -32,7 +32,7 @@ namespace Game.Managers.Calculators
             {
                 previousInitialCost = CalculateInitialCost(previousInitialCost);
                 
-                initialCosts.Add(moneyManager.GetFormattedMoney(previousInitialCost, noLetterForOutputMoney));
+                initialCosts.Add(_moneyManager.GetFormattedMoney(previousInitialCost, noLetterForOutputMoney));
             }
 
             return initialCosts;

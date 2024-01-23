@@ -1,6 +1,7 @@
 ﻿using Core.Helpers;
+using Game.Common.Helpers;
 using Game.Common.Interfaces.Helpers;
-using Game.Helpers;
+using Game.Common.Interfaces.Managers;
 using Game.ScriptableObjects.MoneyFormats;
 
 namespace Game.Managers

@@ -1,4 +1,4 @@
-﻿using Game.Constants.ScriptableObjects;
+﻿using Game.Common.Constants.ScriptableObjects;
 using UnityEditor;
 using ScriptableObject = UnityEngine.ScriptableObject;
 

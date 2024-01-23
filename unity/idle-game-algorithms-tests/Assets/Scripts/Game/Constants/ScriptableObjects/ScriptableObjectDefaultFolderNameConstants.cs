@@ -1,8 +1,0 @@
-﻿namespace Game.Constants.ScriptableObjects
-{
-    public static class ScriptableObjectDefaultFolderNameConstants
-    {
-        public const string StageConfigScriptableObject = "/StageConfigs/";
-        public const string MoneyFormatScriptableObject = "/MoneyFormats/";
-    }
-}
