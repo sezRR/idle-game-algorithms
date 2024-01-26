@@ -3,12 +3,19 @@ using Game.Common.Helpers;
 using Game.Common.Interfaces.Helpers;
 using Game.Common.Interfaces.Managers;
 using Game.ScriptableObjects.MoneyFormats;
+using Zenject;
 
 namespace Game.Managers
 {
     public class MoneyManager : IMoneyManager
     {
-        private readonly MoneyFormatScriptableObject _moneyFormatScriptableObject = AssetsHelper.FindAssetByType<MoneyFormatScriptableObject>();
+        private readonly MoneyFormatScriptableObject _moneyFormatScriptableObject;
+        
+        [Inject]
+        public MoneyManager(MoneyFormatScriptableObject moneyFormatScriptableObject)
+        {
+            _moneyFormatScriptableObject = moneyFormatScriptableObject;
+        }
         
         public string GetFormattedMoney(float number, bool noLetter = false)
         {

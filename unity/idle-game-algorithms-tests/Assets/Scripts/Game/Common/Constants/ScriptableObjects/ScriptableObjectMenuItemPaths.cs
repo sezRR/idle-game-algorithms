@@ -4,5 +4,6 @@
     {
         public const string StageConfigScriptableObject = ScriptableObjectBaseConstants.BaseMenuItemPath + "/Stage Config";
         public const string MoneyFormatScriptableObject = ScriptableObjectBaseConstants.BaseMenuItemPath + "/Money Format";
+        public const string UISettingsScriptableObject = ScriptableObjectBaseConstants.BaseMenuItemPath + "/UI Settings";
     }
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ff9f1226af4ba4859329c8eabc3264, type: 3}
+  m_Name: UISettings
+  m_EditorClassIdentifier: 
+  countOfMachinesStatusUIComponentPrefab: {fileID: 2184348245622041638, guid: 1256c26a3869cb8489223debbb511fbe, type: 3}
+  machineUIComponentPrefab: {fileID: 4535652153363446338, guid: 6873996cf2e510f42a7772c5ee2abe1e, type: 3}
+  canvas: {fileID: 8896987211057459610, guid: d9589d71a9510f742b68a910b1e30dea, type: 3}

@@ -1,26 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using Game.Common.Interfaces.Helpers;
+﻿using System.Collections.Generic;
 using Game.Common.Interfaces.Managers;
 using Game.Common.Interfaces.Managers.Calculators.Initials;
-using UnityEngine;
 using Zenject;
 
 namespace Game.Managers.Calculators
 {
     public class InitialCostsCalculator : IInitialCostsCalculatorManager
     {
-        [Inject]
         private IMoneyManager _moneyManager;
         
-        private float defaultInitialCost = 5;
-        private float initialCostMultiplier = 24;
+        // TODO: Scriptable Object
+        private readonly float _defaultInitialCost = 5;
+        private readonly float _initialCostMultiplier = 24;
+
+        [Inject]
+        public InitialCostsCalculator(IMoneyManager moneyManager)
+        {
+            _moneyManager = moneyManager;
+        }
         
         public float CalculateInitialCost(float previousInitialCost = 0)
         {
             return previousInitialCost == 0
-                ? defaultInitialCost
-                : previousInitialCost * initialCostMultiplier;
+                ? _defaultInitialCost
+                : previousInitialCost * _initialCostMultiplier;
         }
 
         public List<object> CalculateInitialCosts(int numberOfMachines, bool noLetterForOutputMoney = false)

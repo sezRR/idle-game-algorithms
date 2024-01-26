@@ -11,5 +11,10 @@
                                                           + ScriptableObjectDefaultFolderNameConstants.MoneyFormatScriptableObject 
                                                           + ScriptableObjectDefaultFileNameConstants.MoneyFormatScriptableObject 
                                                           + ScriptableObjectBaseConstants.BaseScriptableObjectFileExtension;
+
+        public const string UISettingsScriptableObject = ScriptableObjectBaseConstants.BaseCreatePath 
+                                                          + ScriptableObjectDefaultFolderNameConstants.UISettingsScriptableObject 
+                                                          + ScriptableObjectDefaultFileNameConstants.UISettingsScriptableObject 
+                                                          + ScriptableObjectBaseConstants.BaseScriptableObjectFileExtension;
     }
 }
