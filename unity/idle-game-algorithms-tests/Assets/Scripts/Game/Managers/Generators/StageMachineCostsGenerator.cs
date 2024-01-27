@@ -1,3 +1,4 @@
+using System;
 using Core.Helpers;
 using Game.Common.Interfaces.Managers;
 using Game.Common.Interfaces.Managers.Calculators.Initials;
@@ -8,7 +9,7 @@ using Zenject;
 
 namespace Game.Managers.Generators
 {
-    public class Stage : MonoBehaviour
+    public class StageMachineCostsGenerator : MonoBehaviour
     {
         [Inject]
         private IMoneyManager _moneyManager;

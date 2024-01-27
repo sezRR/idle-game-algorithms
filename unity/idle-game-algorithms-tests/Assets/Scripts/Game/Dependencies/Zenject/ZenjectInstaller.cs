@@ -1,5 +1,4 @@
 ﻿using Core.Helpers;
-using Game.Common.Constants.ScriptableObjects;
 using Game.Common.Interfaces.Managers;
 using Game.Common.Interfaces.Managers.Calculators.Initials;
 using Game.Common.Interfaces.Managers.UIs;
