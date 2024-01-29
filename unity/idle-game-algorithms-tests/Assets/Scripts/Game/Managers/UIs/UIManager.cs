@@ -1,6 +1,6 @@
-using Core.Helpers;
 using Game.Common.Interfaces.Managers.UIs;
 using Game.ScriptableObjects.UIs;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
@@ -14,11 +14,17 @@ namespace Game.Managers.UIs
         [Inject]
         private UISettingsScriptableObject _uiSettingsScriptableObject;
         
-        public void Test()
+        // TODO: maybe core?
+        public void InitializeUIElements()
         {
             _uiSettingsPrefabFactory.Create(_uiSettingsScriptableObject);
         }
-        
+
+        public void UpdateTextElement(TextMeshPro textMeshPro, string newText)
+        {
+            textMeshPro.text = newText;
+        }
+
         public class UISettingsPrefabFactory : PlaceholderFactory<UISettingsScriptableObject, GameObject>
         {
             public override GameObject Create(UISettingsScriptableObject param)

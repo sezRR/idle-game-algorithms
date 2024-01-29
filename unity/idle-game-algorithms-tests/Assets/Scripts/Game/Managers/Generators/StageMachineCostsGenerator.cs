@@ -36,7 +36,7 @@ namespace Game.Managers.Generators
 
             Debug.Log(_moneyManager.GetFormattedMoney(100000000000000000));
 
-            _uiManager.Test();
+            _uiManager.InitializeUIElements();
         }
     }
 }
