@@ -25,6 +25,13 @@ namespace Game.Managers.Calculators
                 ? _defaultInitialCost
                 : previousInitialCost * _initialCostMultiplier;
         }
+        
+        public string CalculateInitialCostWithFormatOutput(float previousInitialCost = 0, bool noLetterForOutputMoney = false)
+        {
+            return previousInitialCost == 0
+                ? _moneyManager.GetFormattedMoney(_defaultInitialCost, noLetterForOutputMoney)
+                : _moneyManager.GetFormattedMoney(previousInitialCost * _initialCostMultiplier, noLetterForOutputMoney);
+        }
 
         public List<object> CalculateInitialCosts(int numberOfMachines, bool noLetterForOutputMoney = false)
         {

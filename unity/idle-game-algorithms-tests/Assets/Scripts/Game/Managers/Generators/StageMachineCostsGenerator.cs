@@ -1,4 +1,3 @@
-using System;
 using Core.Helpers;
 using Game.Common.Interfaces.Managers;
 using Game.Common.Interfaces.Managers.Calculators.Initials;
@@ -22,7 +21,7 @@ namespace Game.Managers.Generators
 
         void Start()
         {
-            StageConfigScriptableObject[] stageConfigs = AssetsHelper.FindAssetsByType<StageConfigScriptableObject>();
+            var stageConfigs = AssetsHelper.FindAssetsByType<StageConfigScriptableObject>();
 
             foreach (var stageConfig in stageConfigs)
             {
@@ -36,7 +35,7 @@ namespace Game.Managers.Generators
 
             Debug.Log(_moneyManager.GetFormattedMoney(100000000000000000));
 
-            _uiManager.InitializeUIElements();
+            _uiManager.InitializeUIElements(stageConfigs[0].QuantityOfMachines, stageConfigs[0].InitialMachineCost);
         }
     }
 }

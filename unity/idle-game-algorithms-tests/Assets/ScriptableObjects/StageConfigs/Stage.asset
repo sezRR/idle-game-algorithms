@@ -15,5 +15,5 @@ MonoBehaviour:
   stageName: Stage
   icon: {fileID: 0}
   initialMachineCost: 5
-  quantityOfMachines: 5
+  quantityOfMachines: 10
   levelDifficulty: 1

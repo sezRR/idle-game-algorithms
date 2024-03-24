@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using Core.Helpers;
+using Game.Common.Constants.ScriptableObjects;
+using UnityEditor;
+using UnityEngine;
 
 namespace Game.ScriptableObjects.UIs
 {
@@ -11,5 +14,11 @@ namespace Game.ScriptableObjects.UIs
         public GameObject CountOfMachinesStatusUIComponentPrefab => countOfMachinesStatusUIComponentPrefab;
         public GameObject MachineUIComponentPrefab => machineUIComponentPrefab;
         public GameObject Canvas => canvas;
+        
+        [MenuItem(ScriptableObjectMenuItemPaths.UISettingsScriptableObject)]
+        public static void CreateMyAsset()
+        {
+            MenuItemHelper.Create<UISettingsScriptableObject>(ScriptableObjectCreatePathConstants.UISettingsScriptableObject);
+        }   
     }
 }

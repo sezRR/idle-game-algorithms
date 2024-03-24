@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using Core.Helpers;
+using Game.Common.Constants.ScriptableObjects;
+using UnityEditor;
 using UnityEngine;
 
 namespace Game.ScriptableObjects.MoneyFormats
@@ -18,5 +21,11 @@ namespace Game.ScriptableObjects.MoneyFormats
         };
 
         public List<string> Formats => new(formats);
+        
+        [MenuItem(ScriptableObjectMenuItemPaths.MoneyFormatScriptableObject)]
+        public static void CreateMyAsset()
+        {
+            MenuItemHelper.Create<MoneyFormatScriptableObject>(ScriptableObjectCreatePathConstants.MoneyFormatScriptableObject);
+        }   
     }
 }

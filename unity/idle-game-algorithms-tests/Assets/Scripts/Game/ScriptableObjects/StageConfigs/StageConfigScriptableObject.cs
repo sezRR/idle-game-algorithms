@@ -1,3 +1,6 @@
+using Core.Helpers;
+using Game.Common.Constants.ScriptableObjects;
+using UnityEditor;
 using UnityEngine;
 
 namespace Game.ScriptableObjects.StageConfigs
@@ -15,5 +18,11 @@ namespace Game.ScriptableObjects.StageConfigs
         public float InitialMachineCost => initialMachineCost;
         public int QuantityOfMachines => quantityOfMachines;
         public float LevelDifficulty => levelDifficulty;
+        
+        [MenuItem(ScriptableObjectMenuItemPaths.StageConfigScriptableObject)]
+        public static void CreateMyAsset()
+        {
+            MenuItemHelper.Create<StageConfigScriptableObject>(ScriptableObjectCreatePathConstants.StageConfigScriptableObject);
+        }   
     }
 }
