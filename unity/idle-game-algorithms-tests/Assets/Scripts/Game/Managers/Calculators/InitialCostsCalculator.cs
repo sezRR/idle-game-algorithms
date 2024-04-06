@@ -7,11 +7,11 @@ namespace Game.Managers.Calculators
 {
     public class InitialCostsCalculator : IInitialCostsCalculatorManager
     {
-        private IMoneyManager _moneyManager;
+        private readonly IMoneyManager _moneyManager;
         
         // TODO: Scriptable Object
-        private readonly float _defaultInitialCost = 5;
-        private readonly float _initialCostMultiplier = 24;
+        public float DefaultInitialCost { get; set; } = 5;
+        public float DefaultInitialCostMultiplier { get; set; } = 24;
 
         [Inject]
         public InitialCostsCalculator(IMoneyManager moneyManager)
@@ -22,15 +22,20 @@ namespace Game.Managers.Calculators
         public float CalculateInitialCost(float previousInitialCost = 0)
         {
             return previousInitialCost == 0
-                ? _defaultInitialCost
-                : previousInitialCost * _initialCostMultiplier;
+                ? DefaultInitialCost
+                : previousInitialCost * DefaultInitialCostMultiplier;
         }
         
         public string CalculateInitialCostWithFormatOutput(float previousInitialCost = 0, bool noLetterForOutputMoney = false)
         {
             return previousInitialCost == 0
-                ? _moneyManager.GetFormattedMoney(_defaultInitialCost, noLetterForOutputMoney)
-                : _moneyManager.GetFormattedMoney(previousInitialCost * _initialCostMultiplier, noLetterForOutputMoney);
+                ? _moneyManager.GetFormattedMoney(DefaultInitialCost, noLetterForOutputMoney)
+                : _moneyManager.GetFormattedMoney(previousInitialCost * DefaultInitialCostMultiplier, noLetterForOutputMoney);
+        }
+
+        public string GetInitialCostWithFormatOutput(float initialCost)
+        {
+            return _moneyManager.GetFormattedMoney(initialCost);
         }
 
         public List<object> CalculateInitialCosts(int numberOfMachines, bool noLetterForOutputMoney = false)

@@ -10,14 +10,17 @@ namespace Game.Managers.Generators
 {
     public class StageMachineCostsGenerator : MonoBehaviour
     {
-        [Inject]
         private IMoneyManager _moneyManager;
-        
-        [Inject]
         private IInitialCostsCalculatorManager _initialCostsCalculator;
-        
-        [Inject]
         private IUIManager _uiManager;
+
+        [Inject]
+        public void Construct(IMoneyManager moneyManager, IInitialCostsCalculatorManager initialCostsCalculator, IUIManager uiManager)
+        {
+            _moneyManager = moneyManager;
+            _initialCostsCalculator = initialCostsCalculator;
+            _uiManager = uiManager;
+        }
 
         void Start()
         {
@@ -35,7 +38,7 @@ namespace Game.Managers.Generators
 
             Debug.Log(_moneyManager.GetFormattedMoney(100000000000000000));
 
-            _uiManager.InitializeUIElements(stageConfigs[0].QuantityOfMachines, stageConfigs[0].InitialMachineCost);
+            _uiManager.InitializeUIElements(stageConfigs[0]);
         }
     }
 }

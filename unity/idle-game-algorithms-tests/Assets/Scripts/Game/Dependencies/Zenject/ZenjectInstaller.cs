@@ -5,6 +5,7 @@ using Game.Common.Interfaces.Managers.UIs;
 using Game.Managers;
 using Game.Managers.Calculators;
 using Game.Managers.UIs;
+using Game.Managers.UIs.Data;
 using Game.ScriptableObjects.MoneyFormats;
 using Game.ScriptableObjects.UIs;
 using UnityEngine;
@@ -25,7 +26,9 @@ namespace Game.Dependencies.Zenject
             Container.Bind<UISettingsScriptableObject>()
                 .FromScriptableObject(AssetsHelper.FindAssetByType<UISettingsScriptableObject>()).AsSingle();
             Container.Bind<IUIManager>().To<UIManager>().FromNewComponentOnNewGameObject().AsSingle();
-            Container.BindFactory<UISettingsScriptableObject, GameObject, UIManager.UISettingsPrefabFactory>().AsSingle();
+            Container.BindFactory<UISettingsScriptableObject, GameObject, UISettingsPrefabFactory>().AsSingle();
+
+            Container.Bind<MachinesData>().AsSingle();
         }
     }
 }
