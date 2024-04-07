@@ -84,7 +84,6 @@ def calculate_initial_times(number_of_productions):
 
     return data
 
-
 print("CALCULATION OF INITIAL TIMES")
 calculate_initial_times(NUMBER_OF_PRODUCTIONS)
 print()
